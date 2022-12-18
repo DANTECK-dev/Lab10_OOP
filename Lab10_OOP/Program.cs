@@ -30,14 +30,30 @@ namespace Lab10_OOP
                     {
                         case Car car when car.Year >= minYear:
                             car.Show();
-                            Console.WriteLine(car.Year);
+                            Console.WriteLine("Год - " + car.Year);
                             Console.WriteLine("---------------------------------------------------------");
                             break;
                         case Aircraft aircraft when aircraft.Distance >= minDistnce:
                             if (aircraft is Aircraft { Passanger: true })
                             {
                                 aircraft.Show();
-                                Console.WriteLine(aircraft.Distance);
+                                Console.WriteLine("Дистанция - " + aircraft.Distance + "|" + aircraft.Passanger);
+                                Console.WriteLine("---------------------------------------------------------");
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                for (int i = 0; i < trans.Count; i++)
+                {
+                    switch (trans[i])
+                    {
+                        case Aircraft aircraft when aircraft.Distance >= minDistnce:
+                            if (aircraft is Aircraft { Passanger: false })
+                            {
+                                aircraft.Show();
+                                Console.WriteLine("Дистанция - " + aircraft.Distance + "|" + aircraft.Passanger);
                                 Console.WriteLine("---------------------------------------------------------");
                             }
                             break;
